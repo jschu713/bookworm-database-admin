@@ -1,10 +1,12 @@
 import MySQLdb
 import os
+from dotenv import load_dotenv
 
-host = 'classmysql.engr.oregonstate.edu'
-user = 'cs340_chujef' 
-passwd = '2203' 
-db = 'cs340_chujef' 
+load_dotenv()
+host = os.getenv('HOST')
+user = os.getenv('USER')
+passwd = os.getenv('PASSWORD')
+db = os.getenv('DB') 
 
 def connect_to_database(host = host, user = user, passwd = passwd, db = db):
     '''
